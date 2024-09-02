@@ -1,9 +1,13 @@
 const express = require('express');
-
-const app = express()
-const PORT = 8000
+const TelegramBot = require('node-telegram-bot-api');
+const token = '7283517004:AAHd2JfX8-UaW5CjohqTc71rjH0qlGO8vok';
+const bot = new TelegramBot(token, {polling: false});
+const app = express();
+const PORT = 8000;
+const chatId = 1055841612;
 
 app.get('/', (req, res) => {
+  bot.sendMessage(chatId, "resp");
   res.send('Hello World')
 })
 
